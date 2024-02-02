@@ -3322,6 +3322,10 @@ def l1_loss(
         return handle_torch_function(
             l1_loss, (input, target), input, target, size_average=size_average, reduce=reduce, reduction=reduction
         )
+    
+    if reduction == 'sum':
+        raise ValueError("Reduction mode 'sum' is not supported for this function.")
+
     if not (target.size() == input.size()):
         warnings.warn(
             f"Using a target size ({target.size()}) that is different to the input size ({input.size()}). "
