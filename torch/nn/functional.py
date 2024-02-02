@@ -3747,7 +3747,7 @@ def upsample(input: Tensor, size: Optional[List[int]] = None, scale_factor: Opti
     pass
 
 
-def upsample(input, size=None, scale_factor=None, mode="bicubic", align_corners=True):  # noqa: F811
+def upsample(input, size=None, scale_factor=None, mode="nearest", align_corners=None):  # noqa: F811
     r"""Upsample input.
 
     Provided tensor is upsampled to either the given :attr:`size` or the given
@@ -3853,7 +3853,7 @@ def interpolate(  # noqa: F811
 ) -> Tensor:  # noqa: F811
     pass
 
-def interpolate(input: Tensor, size: Optional[int] = None, scale_factor: Optional[List[float]] = None, mode: str = 'bilinear', align_corners: Optional[bool] = None, recompute_scale_factor: Optional[bool] = None, antialias: bool = False) -> Tensor:  # noqa: F811,B950
+def interpolate(input: Tensor, size: Optional[int] = None, scale_factor: Optional[List[float]] = None, mode: str = 'bilinear', align_corners: Optional[bool] = True, recompute_scale_factor: Optional[bool] = None, antialias: bool = False) -> Tensor:  # noqa: F811,B950
     r"""Down/up samples the input.
 
     Tensor interpolated to either the given :attr:`size` or the given
