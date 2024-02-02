@@ -3747,7 +3747,7 @@ def upsample(input: Tensor, size: Optional[List[int]] = None, scale_factor: Opti
     pass
 
 
-def upsample(input, size=None, scale_factor=None, mode="nearest", align_corners=None):  # noqa: F811
+def upsample(input, size=None, scale_factor=None, mode="bicubic", align_corners=True):  # noqa: F811
     r"""Upsample input.
 
     Provided tensor is upsampled to either the given :attr:`size` or the given
